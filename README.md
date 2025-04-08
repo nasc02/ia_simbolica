@@ -1,3 +1,3 @@
-initial version of ia_simbolica algorithm
+# ***initial version of ia_simbolica algorithm***
 
 project is using .net 6
