@@ -1,4 +1,5 @@
 ﻿using ia_simbolica;
+using IA_simbolica.models;
 using System.Runtime.CompilerServices;
 
 internal class Program
@@ -7,9 +8,9 @@ internal class Program
     {
         GeneralPurposeClass g = new GeneralPurposeClass();
 
-        int[,] matriz = new int[10, 10];
-        int robo = 99; //numero aleatorio acima de 20
-        int energia = 50;
+        // KeyValuePair<string, TypeOfPosition>[,] matriz = new KeyValuePair<string, TypeOfPosition>[10, 10];
+        Robot robo = new Robot(name: "robocop", energy: 50, positionX: 0, positionY: 0)	; //numero aleatorio acima de 20
+        Console.WriteLine($"robo {robo.Name} criado com energia {robo.Energy} e posição {robo.PositionX}, {robo.PositionY}");
 
         //possiveis movimentos
         // [i-1, j] -> cima
@@ -28,19 +29,17 @@ internal class Program
         //7 0 1 2 3 4 5 6 7 8 9
         //8 0 1 2 3 4 5 6 7 8 9
         //9 0 1 2 3 4 5 6 7 8 9
+        
         //matriz fixa para teste esboço inicial
         //estou utilizando um numero randomico ate 20 pensando que talvez possamos usar alguns numero fixos para representar posições obscuras
-        matriz = g.GerarMatrizAleatoria();
-        List<int> obscurePositionsRepresentative = new List<int> { 5, 10, 15, 20 };
+        g.GerarMatrizAleatoria();
+        g.PrintMatrix();
+        // List<int> obscurePositionsRepresentative = new List<int> { 5, 10, 15, 20, 25, 30, 35 };
+        // List<int> oPositionsRepresentative = new List<int> { 5, 10, 15, 20, 25, 30, 35 };
 
-        energia -= g.AcheOMelhorCaminhoParaORobo(matriz, robo);
+        int energia = g.AcheOMelhorCaminhoParaORobo(g.matriz, robo);
 
         Console.WriteLine($"energia final do robo no teste  {energia}");
-
-        //teste de movimento supondo o caminho perfeito
-
-
-
 
     }
 
