@@ -1,5 +1,14 @@
-# ***initial version of ia_simbolica algorithm***
 
-project is using .net 6
+# LabirintoRobo
 
-a ideia de usar keyvalue para os valores da matriz é no sentido de quando o robo for andar você ter acesso a partir da key I{i}J{j} pegar o valor da posição entre obscuro, +5 de energia ou +10 de energia
+Projeto em C# que simula um robô que percorre uma matriz 10x10 desviando de obstáculos e buscando pontos de energia, com movimentação em 4 direções.
+
+## Como executar
+
+1. Certifique-se de ter o .NET SDK instalado (8.0 ou superior).
+2. Execute no terminal:
+
+```
+dotnet restore
+dotnet run
+```
